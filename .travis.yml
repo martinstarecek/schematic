@@ -1,7 +1,7 @@
 language: php
 
 php:
-  - 7.1
+  - 5.6
   - nightly
 
 env: MINIMUM_VERSIONS=false
@@ -9,7 +9,7 @@ env: MINIMUM_VERSIONS=false
 matrix:
   fast_finish: true
   include:
-    - php: 7.1
+    - php: 5.6
       env: MINIMUM_VERSIONS=true
   allow_failures:
     - php: nightly

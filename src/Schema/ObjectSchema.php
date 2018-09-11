@@ -1,5 +1,4 @@
 <?php
-declare(strict_types=1);
 
 namespace RoundingWell\Schematic\Schema;
 
@@ -7,12 +6,12 @@ use RoundingWell\Schematic\Schema;
 
 class ObjectSchema extends Schema
 {
-    public function phpType(): string
+    public function phpType()
     {
         return 'object';
     }
 
-    public function property($name): Schema
+    public function property($name)
     {
         return Schema::make($this->schema->properties->$name);
     }
@@ -20,7 +19,7 @@ class ObjectSchema extends Schema
     /**
      * @return Schema[]
      */
-    public function properties(): array
+    public function properties()
     {
         $props = [];
 
@@ -34,12 +33,12 @@ class ObjectSchema extends Schema
     /**
      * @return string[]
      */
-    public function required(): array
+    public function required()
     {
-        return $this->schema->required ?? [];
+        return !is_null($this->schema->required) ? $this->schema->required : [];
     }
 
-    public function isRequired($property): bool
+    public function isRequired($property)
     {
         return in_array($property, $this->required());
     }

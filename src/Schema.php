@@ -4,7 +4,7 @@ namespace RoundingWell\Schematic;
 
 abstract class Schema
 {
-    protected const SCHEMA_TYPES = [
+	const SCHEMA_TYPES = [
         'array',
         'boolean',
         'integer',
@@ -18,7 +18,7 @@ abstract class Schema
      * @param string $path
      * @return static
      */
-    public static function fromFile($path): Schema
+	public static function fromFile($path)
     {
         return self::make(json_decode(file_get_contents($path)));
     }
@@ -26,13 +26,13 @@ abstract class Schema
     /**
      * @param object $json
      */
-    public static function make($json): Schema
+	public static function make($json)
     {
-        if ( ! isset($json->type)) {
+		if (!isset($json->type)) {
             throw new \InvalidArgumentException('Missing schema type.');
         }
 
-        if ( ! in_array(strtolower($json->type), self::SCHEMA_TYPES)) {
+		if (!in_array(strtolower($json->type), self::SCHEMA_TYPES)) {
             throw new \InvalidArgumentException(sprintf(
                 'No schema type available for %s.',
                 $json->type
@@ -54,50 +54,50 @@ abstract class Schema
         $this->schema = $schema;
     }
 
-    public function type(): string
+	public function type()
     {
         return $this->schema->type;
     }
 
-    abstract public function phpType(): string;
+	abstract public function phpType();
 
-    public function isArray(): bool
+	public function isArray()
     {
         return $this->type() === 'array';
     }
 
-    public function isBoolean(): bool
+	public function isBoolean()
     {
         return $this->type() === 'boolean';
     }
 
-    public function isInteger(): bool
+	public function isInteger()
     {
         return $this->type() === 'integer';
     }
 
-    public function isNull(): bool
+	public function isNull()
     {
         return $this->type() === 'null';
     }
 
-    public function isNumber(): bool
+	public function isNumber()
     {
         return $this->type() === 'number';
     }
 
-    public function isObject(): bool
+	public function isObject()
     {
         return $this->type() === 'object';
     }
 
-    public function isString(): bool
+	public function isString()
     {
         return $this->type() === 'string';
     }
 
-    public function title(): string
+	public function title()
     {
-        return $this->schema->title ?? '';
+		return $this->schema->title ? $this->schema->title : '';
     }
 }

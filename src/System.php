@@ -1,5 +1,4 @@
 <?php
-declare(strict_types=1);
 
 namespace RoundingWell\Schematic;
 
@@ -8,7 +7,7 @@ namespace RoundingWell\Schematic;
  */
 class System
 {
-    public function writeFile(string $file, string $contents): int
+    public function writeFile($file, $contents)
     {
         $directory = pathinfo($file, PATHINFO_DIRNAME);
 
