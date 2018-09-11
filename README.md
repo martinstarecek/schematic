@@ -1,10 +1,10 @@
 # Schematic
 
-[![Latest Stable Version](https://img.shields.io/packagist/v/rwos/schematic.svg)](https://packagist.org/packages/rwos/schematic)
-[![License](https://img.shields.io/packagist/l/rwos/schematic.svg)](https://github.com/RoundingWellOS/schematic/blob/master/LICENSE)
-[![Build Status](https://travis-ci.org/RoundingWellOS/schematic.svg)](https://travis-ci.org/RoundingWellOS/schematic)
-[![Code Coverage](https://scrutinizer-ci.com/g/RoundingWellOS/schematic/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/RoundingWellOS/schematic/?branch=master)
-[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/RoundingWellOS/schematic/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/RoundingWellOS/schematic/?branch=master)
+[![Latest Stable Version](https://img.shields.io/packagist/v/martinstarecek/schematic.svg)](https://packagist.org/packages/martinstarecek/schematic)
+[![License](https://img.shields.io/packagist/l/martinstarecek/schematic.svg)](https://github.com/martinstarecek/schematic/blob/master/LICENSE)
+[![Build Status](https://travis-ci.org/martinstarecek/schematic.svg)](https://travis-ci.org/martinstarecek/schematic)
+[![Code Coverage](https://scrutinizer-ci.com/g/martinstarecek/schematic/badges/coverage.png?b=master)](https://scrutinizer-ci.com/g/martinstarecek/schematic/badges/coverage.png?b=master)
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/martinstarecek/schematic/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/martinstarecek/schematic/?branch=master)
 
 Schematic is a [JSON Schema](http://json-schema.org/) parser that also supports
 Plain Old PHP Object (POPO) code generation. These generated models can either be
@@ -20,7 +20,7 @@ Strives for [PSR-1][psr-1], [PSR-2][psr-2], and [PSR-4][psr-4] compliance.
 ## Install
 
 ```
-composer require rwos/schematic
+composer require martinstarecek/schematic
 ```
 
 ## Examples

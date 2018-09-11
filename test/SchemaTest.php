@@ -8,7 +8,7 @@ class SchemaTest extends TestCase
 {
     public function testSchema()
     {
-        $schema = Schema::fromFile(__DIR__ . '/../example/car.json');
+        $schema = Schema::fromFile(__DIR__ . '/car.json');
 
         $this->assertTrue($schema->isObject());
         $this->assertSame('Car', $schema->title());
