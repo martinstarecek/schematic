@@ -1,5 +1,5 @@
 {
-    "name": "rwos/schematic",
+    "name": "martinstarecek/schematic",
     "description": "Generate POPO from JSON Schemas",
     "type": "library",
     "license": "Apache-2.0",
