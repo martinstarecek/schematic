@@ -23,10 +23,10 @@ abstract class Schema
         return self::make(json_decode(file_get_contents($path)));
     }
 
-	/**
-	 * @param object $json
-	 * @return mixed
-	 */
+    /**
+     * @param object $json
+     * @return mixed
+     */
     public static function make($json)
     {
         if (!isset($json->type)) {

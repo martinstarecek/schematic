@@ -11,7 +11,7 @@ echo $schema->title(), "\n";
 foreach ($schema->properties() as $name => $schema) {
     echo " - $name ", $schema->phpType(), "\n";
     if ($schema->isArray()) {
-    	/** @var Schema\ArraySchema $schema */
+        /** @var Schema\ArraySchema $schema */
         if ($schema->items()->isObject()) {
             foreach ($schema->items()->properties() as $innerName => $innerSchema) {
                 echo "   - $name ", $schema->phpType(), "\n";
