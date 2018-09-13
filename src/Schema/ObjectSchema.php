@@ -22,7 +22,7 @@ class ObjectSchema extends Schema
             $props[$name] = Schema::make($schema);
         }
 
-        foreach ($this->schema->oneOf ?: [] as $oneOf) {
+        foreach (isset($this->schema->oneOf) ? $this->schema->oneOf : [] as $oneOf) {
             foreach ($oneOf->properties as $name => $schema) {
                 $props[$name] = Schema::make($schema);
             }
