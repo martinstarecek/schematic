@@ -11,11 +11,6 @@ class ObjectSchema extends Schema
         return 'object';
     }
 
-    public function property($name)
-    {
-        return Schema::make($this->schema->properties->$name);
-    }
-
     /**
      * @return Schema[]
      */
@@ -24,7 +19,13 @@ class ObjectSchema extends Schema
         $props = [];
 
         foreach ($this->schema->properties as $name => $schema) {
-            $props[$name] = $this->property($name);
+            $props[$name] = Schema::make($schema);
+        }
+
+        foreach ($this->schema->oneOf ?: [] as $oneOf) {
+            foreach ($oneOf->properties as $name => $schema) {
+                $props[$name] = Schema::make($schema);
+            }
         }
 
         return $props;
